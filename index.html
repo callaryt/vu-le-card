@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lê Thanh Vũ</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:url('avatar.jpg') no-repeat center center fixed;
+background-size:cover;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+position:relative;
+overflow:hidden;
+}
+
+body::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.45);
+backdrop-filter:blur(8px);
+}
+
+.card{
+position:relative;
+z-index:2;
+width:92%;
+max-width:360px;
+padding:30px 25px;
+border-radius:25px;
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(18px);
+text-align:center;
+color:#fff;
+box-shadow:0 8px 30px rgba(0,0,0,.35);
+}
+
+.avatar{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid white;
+margin-bottom:15px;
+}
+
+h1{
+font-size:28px;
+margin-bottom:8px;
+}
+
+.job{
+font-size:17px;
+opacity:.95;
+margin-bottom:18px;
+}
+
+.note{
+font-size:15px;
+line-height:1.6;
+margin-bottom:25px;
+}
+
+.btn{
+display:block;
+width:100%;
+padding:15px;
+margin:12px 0;
+border:none;
+border-radius:14px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+text-decoration:none;
+color:white;
+background:rgba(255,255,255,.18);
+transition:.3s;
+}
+
+.btn:hover{
+background:rgba(255,255,255,.35);
+}
+
+.modal{
+display:none;
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.75);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.modal-content{
+background:white;
+padding:20px;
+border-radius:20px;
+text-align:center;
+max-width:340px;
+width:90%;
+}
+
+.modal-content h2{
+color:#333;
+margin-bottom:15px;
+}
+
+.modal-content img{
+width:100%;
+border-radius:12px;
+}
+
+.close{
+margin-top:18px;
+padding:10px 20px;
+border:none;
+border-radius:10px;
+background:#e74c3c;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="avatar.jpg" class="avatar" alt="Avatar">
+
+<h1>Lê Thanh Vũ</h1>
+
+<p class="job">Đối tác tài xế BE Bike</p>
+
+<p class="note">
+Xin chân thành cảm ơn bạn đã ghé thăm.<br>
+Chúc bạn thật nhiều sức khỏe, bình an và thành công!
+</p>
+
+<a class="btn" href="https://zalo.me/0985345967" target="_blank">
+💬 Chat Zalo
+</a>
+
+<a class="btn" href="https://www.tiktok.com/" target="_blank">
+🎵 TikTok
+</a>
+
+<a class="btn" href="tel:0985345967">
+📞 Gọi ngay
+</a>
+
+<button class="btn" onclick="openQR()">
+❤️ Ủng hộ tài xế
+</button>
+
+</div>
+
+<div class="modal" id="qrModal">
+
+<div class="modal-content">
+
+<h2>Quét mã QR để ủng hộ</h2>
+
+<img src="qr-techcombank.jpg" alt="QR Techcombank">
+
+<button class="close" onclick="closeQR()">
+Đóng
+</button>
+
+</div>
+
+</div>
+
+<script>
+  function openQR(){
+    document.getElementById("qrModal").style.display="flex";
+}
+
+function closeQR(){
+    document.getElementById("qrModal").style.display="none";
+}
+
+window.onclick=function(event){
+    const modal=document.getElementById("qrModal");
+    if(event.target===modal){
+        closeQR();
+    }
+}
+</script>
+
+</body>
+</html>
