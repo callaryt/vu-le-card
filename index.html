@@ -1,216 +1,296 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lê Thanh Vũ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080817">
+<title>Vũ Lê</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-body{
-background:url('avatar.jpg') no-repeat center center fixed;
-background-size:cover;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-position:relative;
-overflow:hidden;
+body {
+  min-height: 100vh;
+  color: white;
+  background:
+    radial-gradient(ellipse at 15% 35%, #17366b 0%, transparent 38%),
+    radial-gradient(ellipse at 85% 20%, #4b145d 0%, transparent 35%),
+    linear-gradient(145deg, #080817, #10152d 55%, #080817);
+  overflow-x: hidden;
+  padding: 28px 14px;
 }
 
-body::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.45);
-backdrop-filter:blur(8px);
+.city {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .45;
+  background:
+    linear-gradient(90deg, transparent 10%, #00eaff 10.3%, transparent 10.6%),
+    linear-gradient(90deg, transparent 75%, #ff36c7 75.3%, transparent 75.6%);
 }
 
-.card{
-position:relative;
-z-index:2;
-width:92%;
-max-width:360px;
-padding:30px 25px;
-border-radius:25px;
-background:rgba(255,255,255,.18);
-backdrop-filter:blur(18px);
-text-align:center;
-color:#fff;
-box-shadow:0 8px 30px rgba(0,0,0,.35);
+.wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  margin: auto;
+  border: 1px solid rgba(0,238,255,.45);
+  border-radius: 26px;
+  overflow: hidden;
+  background: rgba(7,10,29,.83);
+  box-shadow: 0 0 35px rgba(0,220,255,.18);
 }
 
-.avatar{
-width:120px;
-height:120px;
-border-radius:50%;
-object-fit:cover;
-border:4px solid white;
-margin-bottom:15px;
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 18px;
+  padding: 30px 24px 22px;
 }
 
-h1{
-font-size:28px;
-margin-bottom:8px;
+.rider {
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background:
+    linear-gradient(160deg, rgba(0,238,255,.12), transparent 55%),
+    repeating-linear-gradient(90deg, transparent 0 35px,
+    rgba(255,255,255,.035) 36px 38px);
+  border-bottom: 3px solid #00eaff;
 }
 
-.job{
-font-size:17px;
-opacity:.95;
-margin-bottom:18px;
+.rider-icon {
+  font-size: 100px;
+  filter: drop-shadow(0 0 15px #00dfff);
 }
 
-.note{
-font-size:15px;
-line-height:1.6;
-margin-bottom:25px;
+.rider small {
+  color: #ffd84a;
+  letter-spacing: 2px;
+  margin-top: 8px;
 }
 
-.btn{
-display:block;
-width:100%;
-padding:15px;
-margin:12px 0;
-border:none;
-border-radius:14px;
-font-size:17px;
-font-weight:bold;
-cursor:pointer;
-text-decoration:none;
-color:white;
-background:rgba(255,255,255,.18);
-transition:.3s;
+.intro {
+  text-align: center;
 }
 
-.btn:hover{
-background:rgba(255,255,255,.35);
+.headphones {
+  font-size: 48px;
+  color: #ffd83d;
+  text-shadow: 0 0 18px #ffcc00;
+  margin-bottom: 8px;
 }
 
-.modal{
-display:none;
-position:fixed;
-left:0;
-top:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.75);
-justify-content:center;
-align-items:center;
-z-index:999;
+h1 {
+  font-size: 38px;
+  letter-spacing: 3px;
+  color: #fff;
+  text-shadow: 0 0 16px #00dfff;
+  margin-bottom: 12px;
 }
 
-.modal-content{
-background:white;
-padding:20px;
-border-radius:20px;
-text-align:center;
-max-width:340px;
-width:90%;
+.note {
+  color: #f3f3ff;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-.modal-content h2{
-color:#333;
-margin-bottom:15px;
+.buttons {
+  padding: 8px 24px 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
 }
 
-.modal-content img{
-width:100%;
-border-radius:12px;
+.btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  padding: 15px 10px;
+  border: 1px solid rgba(0,238,255,.65);
+  border-radius: 13px;
+  background: linear-gradient(110deg,
+    rgba(0,190,255,.17), rgba(160,50,255,.17));
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 0 12px rgba(0,220,255,.12);
+  cursor: pointer;
+  transition: .2s;
 }
 
-.close{
-margin-top:18px;
-padding:10px 20px;
-border:none;
-border-radius:10px;
-background:#e74c3c;
-color:white;
-font-size:16px;
-cursor:pointer;
+.btn:active {
+  transform: scale(.97);
+  background: rgba(0,238,255,.3);
 }
-  </style>
+
+.btn.support {
+  grid-column: 1 / -1;
+  color: #ffe36a;
+  border-color: #ffd83d;
+  box-shadow: 0 0 16px rgba(255,216,61,.2);
+}
+
+.footer {
+  text-align: center;
+  padding: 0 12px 22px;
+  color: #9caacb;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: rgba(0,0,0,.88);
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 340px;
+  background: white;
+  color: #222;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 21px;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.close {
+  margin-top: 16px;
+  padding: 11px 25px;
+  border: 0;
+  border-radius: 10px;
+  background: #e74c3c;
+  color: white;
+  font-size: 16px;
+}
+
+@media (max-width: 560px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 20px 18px;
+  }
+
+  .rider {
+    min-height: 150px;
+  }
+
+  .rider-icon {
+    font-size: 78px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  .buttons {
+    padding: 5px 18px 24px;
+    gap: 10px;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 14px 6px;
+  }
+}
+</style>
 </head>
 
 <body>
+<div class="city"></div>
 
-<div class="card">
+<main class="wrapper">
+  <section class="hero">
+    <div class="rider">
+      <div class="rider-icon">🏍️</div>
+      <small>FALCON • NIGHT RIDE</small>
+    </div>
 
-<img src="avatar.jpg" class="avatar" alt="Avatar">
+    <div class="intro">
+      <div class="headphones">🎧</div>
+      <h1>VŨ LÊ</h1>
+      <p class="note">
+        Cảm ơn bạn đã ủng hộ
+      </p>
+    </div>
+  </section>
 
-<h1>Lê Thanh Vũ</h1>
+  <section class="buttons">
+    <a class="btn"
+       href="https://zaloapp.com/qr/p/1r5syh5imwilg?src=qr"
+       target="_blank">💬 Chat Zalo</a>
 
-<p class="job">Đối tác tài xế BE Bike</p>
+    <a class="btn"
+       href="https://www.tiktok.com/@giai.iu.c.kha"
+       target="_blank">🎵 TikTok</a>
 
-<p class="note">
-Xin chân thành cảm ơn bạn đã ghé thăm.<br>
-Chúc bạn thật nhiều sức khỏe, bình an và thành công!
-</p>
+    <a class="btn" href="tel:0985345967">📞 Gọi ngay</a>
 
-<a class="btn" href="https://zaloapp.com/qr/p/1r5syh5imwilg?src=qr" target="_blank">
-💬 Chat Zalo
-</a>
+    <a class="btn"
+       href="https://www.facebook.com/share/1Gt6EqZYMX/"
+       target="_blank">📘 Facebook</a>
 
-<a class="btn"href="https://www.tiktok.com/@giai.iu.c.kha"  target="_blank">
-🎵 TikTok
-</a>
+    <a class="btn"
+       href="https://callaryt.github.io/qr-am-nhac/"
+       target="_blank">🎵 Nghe nhạc</a>
 
-<a class="btn" href="tel:0985345967">
-📞 Gọi ngay
-</a>
-  <a class="btn" href="https://www.facebook.com/share/1Gt6EqZYMX/" target="_blank">
-📘 Facebook
-  </a>
-  <a class="btn" href="https://callaryt.github.io/qr-am-nhac/" target="_blank">
-🎵 Nghe nhạc
-  </a>
+    <button class="btn support" onclick="openQR()">
+      Quét yêu thương ❤️
+    </button>
+  </section>
 
-<button class="btn" onclick="openQR()">
-Quét yêu thương ❤️
-</button>
-
-</div>
+  <div class="footer">
+    THANK YOU • WISH YOU PEACE & HAPPINESS
+  </div>
+</main>
 
 <div class="modal" id="qrModal">
-
-<div class="modal-content">
-
-<h2>Quét mã QR để ủng hộ</h2>
-
-<img src="qr-techcombank.jpg" alt="QR Techcombank">
-
-<button class="close" onclick="closeQR()">
-Đóng
-</button>
-
-</div>
-
+  <div class="modal-content">
+    <h2>Quét mã QR để ủng hộ</h2>
+    <img src="qr-techcombank.jpg" alt="QR Techcombank">
+    <button class="close" onclick="closeQR()">Đóng</button>
+  </div>
 </div>
 
 <script>
-  function openQR(){
-    document.getElementById("qrModal").style.display="flex";
+function openQR() {
+  document.getElementById("qrModal").style.display = "flex";
 }
 
-function closeQR(){
-    document.getElementById("qrModal").style.display="none";
+function closeQR() {
+  document.getElementById("qrModal").style.display = "none";
 }
 
-window.onclick=function(event){
-    const modal=document.getElementById("qrModal");
-    if(event.target===modal){
-        closeQR();
-    }
-}
+window.onclick = function(event) {
+  const modal = document.getElementById("qrModal");
+  if (event.target === modal) closeQR();
+};
 </script>
-
 </body>
 </html>
