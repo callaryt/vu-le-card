@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -21,51 +22,27 @@ body {
   overflow-x: hidden;
 }
 
-/* NỀN THÀNH PHỐ */
+/* ẢNH NỀN MỚI */
 .city {
   position: fixed;
   inset: 0;
   z-index: -2;
   background:
-    linear-gradient(180deg, #151a42aa, #090a18ee),
-    radial-gradient(ellipse at 50% 35%, #b44c9c 0%, transparent 48%),
-    linear-gradient(135deg, #182b55, #311a42 55%, #090a18);
-}
-
-.city::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      transparent 0 35px,
-      #ffb85b18 36px 39px
-    );
-  opacity: .6;
-}
-
-.city::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 45%;
-  bottom: 0;
-  background:
-    linear-gradient(0deg, #080916, transparent),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0 45px,
-      #ffb84d18 46px 49px
-    );
+    linear-gradient(180deg, #0005, #0009),
+    url("https://i.ibb.co/QjbRzfBb/file-0000000043588211926391ad39ab3bb6.png")
+    center center / cover no-repeat;
 }
 
 /* KHUNG CHÍNH */
 .wrapper {
   width: 100%;
   max-width: 520px;
+  min-height: 100vh;
   margin: auto;
   padding: 30px 18px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* PHẦN ĐẦU */
@@ -78,7 +55,6 @@ body {
   padding-top: 8px;
 }
 
-/* TAI NGHE NEON */
 .headphones {
   position: relative;
   width: 145px;
@@ -89,22 +65,14 @@ body {
   justify-content: center;
   font-size: 88px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    #252b55,
-    #111329 65%,
-    transparent 72%
-  );
+  background: #11132999;
   filter: drop-shadow(0 0 12px #00d9ff);
-  text-shadow:
-    0 0 10px #00eaff,
-    0 0 25px #00aaff,
-    0 0 45px #9c4dff;
+  text-shadow: 0 0 20px #00d9ff;
   animation: glow 2s ease-in-out infinite alternate;
 }
 
 .headphones::before {
-  content: "♫  ♪  ♬";
+  content: "♫ ♪ ♬";
   position: absolute;
   top: -10px;
   left: -20px;
@@ -112,30 +80,12 @@ body {
   font-size: 22px;
   color: #ffda59;
   letter-spacing: 13px;
-  text-shadow: 0 0 12px #ffd400;
   animation: notes 2s infinite alternate;
 }
 
-.headphones::after {
-  content: "";
-  position: absolute;
-  inset: -9px;
-  border: 2px solid #00d9ff;
-  border-radius: 50%;
-  box-shadow:
-    0 0 12px #00d9ff,
-    inset 0 0 15px #9d50ff;
-}
-
 @keyframes glow {
-  from {
-    filter: drop-shadow(0 0 10px #00d9ff);
-  }
-  to {
-    filter:
-      drop-shadow(0 0 24px #9d50ff)
-      drop-shadow(0 0 12px #00d9ff);
-  }
+  from { filter: drop-shadow(0 0 10px #00d9ff); }
+  to { filter: drop-shadow(0 0 24px #ffd400); }
 }
 
 @keyframes notes {
@@ -143,22 +93,20 @@ body {
   to { transform: translateY(-9px); opacity: 1; }
 }
 
-/* TÊN */
 h1 {
   font-size: 38px;
   font-weight: 900;
   letter-spacing: 5px;
   color: #fff;
-  text-shadow:
-    0 0 8px #00d9ff,
-    0 0 22px #9d50ff;
+  text-shadow: 0 0 8px #00d9ff, 0 0 22px #9d50ff;
 }
 
 .note {
   margin-top: 10px;
   font-size: 15px;
-  color: #f2dfff;
+  color: #fff;
   letter-spacing: 1px;
+  text-shadow: 0 2px 5px #000;
 }
 
 /* 6 NÚT CHỨC NĂNG */
@@ -182,14 +130,8 @@ h1 {
   padding: 14px 6px;
   border: 1px solid #65caff;
   border-radius: 14px;
-  background: linear-gradient(
-    135deg,
-    #17284ddd,
-    #281746ee
-  );
-  box-shadow:
-    0 0 8px #00bfff55,
-    inset 0 0 10px #8b54ff22;
+  background: #10152ddd;
+  box-shadow: 0 0 8px #00bfff55;
   transition: .25s;
 }
 
@@ -209,29 +151,16 @@ h1 {
   letter-spacing: 1px;
   border: 2px solid #ffd400;
   border-radius: 16px;
-  background: linear-gradient(
-    135deg,
-    #29200b,
-    #171326
-  );
-  box-shadow:
-    0 0 8px #ffd400,
-    0 0 20px #ffbd00aa,
-    inset 0 0 15px #ffd40022;
+  background: #171326ee;
+  box-shadow: 0 0 8px #ffd400, 0 0 20px #ffbd00aa;
   text-shadow: 0 0 10px #ffd400;
   cursor: pointer;
   animation: goldGlow 2s infinite alternate;
 }
 
 @keyframes goldGlow {
-  from {
-    box-shadow: 0 0 8px #ffd400;
-  }
-  to {
-    box-shadow:
-      0 0 18px #ffd400,
-      0 0 32px #ffb700aa;
-  }
+  from { box-shadow: 0 0 8px #ffd400; }
+  to { box-shadow: 0 0 18px #ffd400, 0 0 32px #ffb700aa; }
 }
 
 /* CHÂN TRANG */
@@ -240,8 +169,9 @@ h1 {
   margin-top: 18px;
   font-size: 10px;
   letter-spacing: 2px;
-  color: #c8c1e5;
+  color: white;
   line-height: 1.8;
+  text-shadow: 0 2px 5px #000;
 }
 
 /* CỬA SỔ QR */
@@ -294,24 +224,10 @@ h1 {
 }
 
 @media (max-width: 380px) {
-  .wrapper {
-    padding: 20px 12px 30px;
-  }
-
-  h1 {
-    font-size: 34px;
-  }
-
-  .buttons {
-    padding: 5px 6px 24px;
-    gap: 10px;
-  }
-
-  .btn {
-    font-size: 14px;
-    padding: 14px 5px;
-  }
-
+  .wrapper { padding: 20px 12px 30px; }
+  h1 { font-size: 34px; }
+  .buttons { padding: 5px 6px 24px; gap: 10px; }
+  .btn { font-size: 14px; padding: 14px 5px; }
   .headphones {
     width: 130px;
     height: 130px;
@@ -327,78 +243,69 @@ h1 {
 
 <main class="wrapper">
 
-  <section class="hero">
-    <div class="intro">
-      <div class="headphones">🎧</div>
-
-      <h1>VŨ LÊ</h1>
-
-      <p class="note">
-        Cảm ơn bạn đã ủng hộ
-      </p>
-    </div>
-  </section>
-
-  <section class="buttons">
-
-    <a class="btn"
-       href="https://zaloapp.com/qr/p/1r5syh5imwilg?src=qr"
-       target="_blank">
-       💬 Chat Zalo
-    </a>
-
-    <a class="btn"
-       href="https://www.tiktok.com/@giai.iu.c.kha"
-       target="_blank">
-       🎵 TikTok
-    </a>
-
-    <a class="btn"
-       href="tel:0985345967">
-       📞 Gọi ngay
-    </a>
-
-    <a class="btn"
-       href="https://www.facebook.com/share/1Gt6EqZYMX/"
-       target="_blank">
-       📘 Facebook
-    </a>
-
-    <a class="btn"
-       href="https://callaryt.github.io/qr-am-nhac/"
-       target="_blank">
-       🎵 Nghe nhạc
-    </a>
-
-    <button class="btn support" onclick="openQR()">
-      ♥️ QUÉT YÊU THƯƠNG 💸
-    </button>
-
-  </section>
-
-  <div class="footer">
-    THANK YOU • WISH YOU PEACE & HAPPINESS
+<section class="hero">
+  <div class="intro">
+    <div class="headphones">🎧</div>
+    <h1>VŨ LÊ</h1>
+    <p class="note">Cảm ơn bạn đã ủng hộ</p>
   </div>
+</section>
+
+<section class="buttons">
+
+<a class="btn"
+href="https://zaloapp.com/qr/p/1r5syh5imwilg?src=qr"
+target="_blank">
+💬 Chat Zalo
+</a>
+
+<a class="btn"
+href="https://www.tiktok.com/@giai.iu.c.kha"
+target="_blank">
+🎵 TikTok
+</a>
+
+<a class="btn" href="tel:0985345967">
+📞 Gọi ngay
+</a>
+
+<a class="btn"
+href="https://www.facebook.com/share/1Gt6EqZYMX/"
+target="_blank">
+📘 Facebook
+</a>
+
+<a class="btn"
+href="https://callaryt.github.io/qr-am-nhac/"
+target="_blank">
+🎵 Nghe nhạc
+</a>
+
+<button class="btn support" onclick="openQR()">
+♥️ QUÉT YÊU THƯƠNG 💸
+</button>
+
+</section>
+
+<div class="footer">
+THANK YOU • WISH YOU PEACE & HAPPINESS
+</div>
 
 </main>
 
 <!-- CỬA SỔ THANH TOÁN -->
 <div class="modal" id="qrModal">
-
   <div class="modal-content">
-
     <h2>♥️ QUÉT YÊU THƯƠNG 💸</h2>
 
     <img
-      src="qr-techcombank.jpg"
-      alt="Mã QR thanh toán Techcombank">
+    src="qr-techcombank.jpg"
+    alt="Mã QR thanh toán Techcombank">
 
     <button class="close" onclick="closeQR()">
-      Đóng
+    Đóng
     </button>
-
   </div>
-
 </div>
 
 <script>
@@ -412,7 +319,6 @@ function closeQR() {
 
 window.onclick = function(event) {
   const modal = document.getElementById("qrModal");
-
   if (event.target === modal) {
     closeQR();
   }
@@ -421,4 +327,3 @@ window.onclick = function(event) {
 
 </body>
 </html>
-
